@@ -226,6 +226,7 @@ def _parse_args():
     parser.add_argument("-p", "--port", type=int, required=False, default=8888, help="the listening port")
     parser.add_argument("-w", "--work_path", type=str, required=True, help="the work dir to save the file")
     parser.add_argument("-t", "--davinci_environment_type", type=str, required=False, default="Ascend310",
+                        choices = Davinci.supported_devices,
                         help="the type of the davinci hardwares")
     parser.add_argument("-c", "--clean_interval", type=int, required=False, default=1 * 6 * 3600,
                         help="the time interval to clean the temp folder")
