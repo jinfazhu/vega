@@ -88,7 +88,7 @@ class Evaluate(Resource):
     decorators = [limiter.limit(get_request_frequency_limit, exempt_when=lambda: not Evaluate.security_mode)]
 
     def __init__(self):
-        self.result = {"latency": "9999", "out_data": [], "status": "sucess", "timestamp": "", "error_message": ""}
+        self.result = {"latency": "9999", "out_data": [], "status": "success", "timestamp": "", "error_message": ""}
 
     @classmethod
     def _add_params(cls, work_path, security_mode, optional_params):
@@ -202,7 +202,7 @@ class Evaluate(Resource):
             weight_file.save(self.weight)
         else:
             self.weight = ""
-        logging.warning("upload file sucess!")
+        logging.warning("upload file success!")
 
 
 def _clean_data_path(clean_interval, work_path):
